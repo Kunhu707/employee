@@ -34,14 +34,14 @@
                             <div class="form-group">
                                 <strong>Photo</strong>
                                     @if(isset($employer->photo))
-                                        <img id="original" src="{{ asset('storage/images/photo/'.$employer->photo) }}" height="70" width="70">
+                                        <img id="original" src="{{ asset('storage/images/photo/'.$employer->photo) }}" height="70" width="70" alt="preview image">
                                     @endif
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputFile">File input</label>
                                 <div class="input-group">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="file">
+                                    <input type="file"  accept="image/*"  class="custom-file-input" id="exampleInputFile" name="file">
                                     <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                                 </div>
                                 <div class="input-group-append">
@@ -72,3 +72,27 @@
     </div>
 </section>
 @endsection
+
+@push('scripts')
+<script type="text/javascript">
+      
+$(document).ready(function (e) {
+ 
+   
+   $('#exampleInputFile').change(function(){
+            
+    let reader = new FileReader();
+ 
+    reader.onload = (e) => { 
+ 
+      $('#original').attr('src', e.target.result); 
+    }
+ 
+    reader.readAsDataURL(this.files[0]); 
+   
+   });
+   
+});
+ 
+</script>
+@endpush

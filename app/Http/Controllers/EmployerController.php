@@ -77,7 +77,7 @@ class EmployerController extends Controller
             
             \Mail::to($request['email'])->send(new \App\Mail\Employee($details));
         }
-        
+        Session::flash('success', 'Employee Added successfully');
         return redirect('/employees');
     }
     
@@ -94,7 +94,8 @@ class EmployerController extends Controller
             $employer->delete();
             Storage::delete('/public/images/photo/'.$employer->photo);
         }
-
+        
+        Session::flash('success', 'Employee Deleted successfully');
         return redirect('/employees');
     }
 

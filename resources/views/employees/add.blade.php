@@ -35,30 +35,30 @@
                             <div class="form-group">
                                 <label for="exampleInputFile">File input</label>
                                 <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="file">
-                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                </div>
-                                <div class="input-group-append">
-                                    <span class="input-group-text">Upload</span>
-                                </div>
+                                    <div class="custom-file">
+                                        <input type="file"  accept="image/*" class="custom-file-input" id="exampleInputFile" name="file">
+                                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Upload</span>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="designation_id">Designation</label>
                                 <select class="form-control" name="designation_id">
-                                        <option value="0">Select</option>
+                                        <option selected="true" disabled="disabled">Select</option>
                                     @foreach ($designations as $dg)
                                         <option value="{{ $dg->id }}">{{ $dg->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
 
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <a class="btn btn-default btn-close" href="{{ route('employees') }}">Cancel</a>
-                        </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <a class="btn btn-default btn-close" href="{{ route('employees') }}">Cancel</a>
+                            </div>
                     </form>
                 </div>
             </div>

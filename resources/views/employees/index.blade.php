@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h2 class="card-title">Employees</h2>
-                        <a class="btn btn-success" style="float:right" href="{{ route('add-employee') }}">Add Employee</a>
+                        <a class="btn btn-primary" style="float:right" href="{{ route('add-employee') }}">Add Employee</a>
                     </div>
                     <div class="card-body">
                         <table id="table" class="table table-bordered table-hover">
@@ -43,8 +43,8 @@
     </div>
 </section>
 @endsection
-<link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<!-- <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
 @push('scripts')
 <script type="text/javascript" src="{{asset('js/datatables.js')}}"></script>
 @endpush
@@ -53,5 +53,8 @@
     .photo {
         height:40px;
         width:40px;
+    }
+    .row {
+        width: 100%
     }
 </style>
